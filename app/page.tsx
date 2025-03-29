@@ -1,18 +1,18 @@
 "use client";
 import { FaLock } from "react-icons/fa6";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, User, UserCredential } from "firebase/auth";
 import { auth, provider } from "./firebase/config";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
-export default function LoginPage() {
+export default function LoginPage(): React.ReactElement {
   const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleLogin = async (): Promise<void> => {
     try {
-      const result = await signInWithPopup(auth, provider);
+      const result: UserCredential = await signInWithPopup(auth, provider);
       console.log("Usuário logado:", result.user);
       router.push("/dashboard");
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("Erro no login:", error);
     }
   };
