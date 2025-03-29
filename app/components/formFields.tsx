@@ -7,9 +7,9 @@ export default function FormFields() {
 
     return (
         <div className="flex items-center justify-center text-sm">
-          <div className="flex flex-wrap gap-4 w-[60%] border-1 border-black-300 p-3 rounded-md">
-            <div className="flex flex-col w-full sm:w-[30%]">
-              <label htmlFor="nome" className="text-sm font-medium">NOME</label>
+          <div className="flex flex-wrap gap-1 w-[40%] border border-black-300 p-3 rounded-md bg-gray-300">
+            <div className="flex flex-col w-full">
+              <label htmlFor="nome" className="text-sm font-sm ">NOME</label>
               <input
                 type="text"
                 id="nome"
@@ -20,8 +20,8 @@ export default function FormFields() {
               />
             </div>
       
-            <div className="flex flex-col w-full sm:w-[30%]">
-              <label htmlFor="senha" className="text-sm font-medium">SENHA</label>
+            <div className="flex flex-col w-full ">
+              <label htmlFor="senha" className="text-sm font-sm">SENHA</label>
               <input
                 type="password"
                 id="senha"
@@ -32,8 +32,8 @@ export default function FormFields() {
               />
             </div>
       
-            <div className="flex flex-col w-full sm:w-[30%]">
-              <label htmlFor="observacao" className="text-sm font-medium">OBSERVAÇÃO</label>
+            <div className="flex flex-col w-full ">
+              <label htmlFor="observacao" className="text-sm font-sm">OBSERVAÇÃO</label>
               <input
                 type="text"
                 id="observacao"
