@@ -12,6 +12,7 @@ export default function Dashboard() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
+        console.log(currentUser.photoURL)
         setUser(currentUser);
       } else {
         router.push("/"); 
@@ -27,21 +28,24 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-end justify-start space-y-4 pt-1 pr-2">
+    <div className="min-h-screen flex flex-col items-center justify-start space-y-4 pt-3 pr-2 pl-5">
       {user ? (
         <>
-          <img 
-            src={user.photoURL || "/default-avatar.png"} 
-            alt="Foto de perfil" 
-            className="w-8 h-8 rounded-full border"
-          />
-          <h2 className="text-sm font-semibold">{user.displayName}</h2>
-          <button 
+        <button 
             onClick={handleLogout} 
-            className="px-4 py-2 bg-red-500 text-sm text-white rounded-md hover:bg-red-600 transition"
+            className="px-4 py-2 bg-red-500 text-sm text-white rounded-md hover:bg-red-600 transition translate-x-150"
           >
             LogOut
-          </button>          
+          </button> 
+          <div className="flex items-center space-x-4">
+            <img 
+              src={user.photoURL || "/default-avatar.png"}
+              alt="Foto de perfil"
+              className="w-20 h-20 rounded-full border"
+            />
+            <h2 className="text-lg font-semibold">{user.displayName}</h2>
+          </div>
+                   
         </>
       ) : (
         <p>Carregando usuário...</p>

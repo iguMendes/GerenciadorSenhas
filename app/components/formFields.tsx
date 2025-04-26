@@ -10,7 +10,7 @@ interface Field {
     nome: string;
     senha: string;
     observacao: string;
-    id?: string; // <- agora temos ID
+    id?: string;
 }
 
 export default function FormFields() {
@@ -183,7 +183,7 @@ export default function FormFields() {
                             id={`observacao-${index}`}
                             value={field.observacao}
                             onChange={(e) => handleChange(index, "observacao", e.target.value)}
-                            className="w-full px-3 py-2 border rounded-md"
+                            className="w-full px-3 py-5 border rounded-md"
                             placeholder="Observação"
                         />
                     </div>
