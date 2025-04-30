@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import { User, onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import FormFields from "../components/formFields";  // Certifique-se de que o caminho está correto
+import FormFields from "../components/formFields";
 
 export default function Dashboard() {
   const router = useRouter();
